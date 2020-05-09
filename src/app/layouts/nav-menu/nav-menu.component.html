@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport>
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/"><mat-icon>dashboard</mat-icon> Dashboard</a>
+      <a mat-list-item routerLink="/post">Link 2</a>
+      <a mat-list-item href="#">Link 3</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Reactive Dashboard</span>
+      <span class="spacer"></span>
+      <a mat-icon-button><mat-icon>help</mat-icon></a>
+      <a mat-icon-button><mat-icon>notifications</mat-icon></a>
+      <a mat-icon-button><mat-icon>person</mat-icon></a>
+    </mat-toolbar>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<footer>&copy; All rights reserved 2020</footer>
