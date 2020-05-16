@@ -1,0 +1,15 @@
+<form #imageForm = ngForm (ngSubmit)="onSubmit(Caption,Image)">
+    <label for="Caption">Caption</label>
+    <input type="text" #Caption ngModel name="Caption" id="Caption" required>
+    <img [src]="imageUrl" style="width:250px;height:250px" (click)="fileUploader.click()">
+
+    <input type="file" #Image accept="image/*" #fileUploader (change)="handleFIleInput($event.target.files)">
+  
+    <button type="submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+    <img src="C:/Users/admin/Desktop/Angular/WebAPIProject/WebAPIProject//wwwroot/Image/c4da99956d7f4e71a6caab86b7955c4a.jpg" alt="">
+    <!-- <div *ngIf="thumbnail">
+        <div *ngFor="let i of thumbnail">
+            <img src="{{i.img}}" >
+        </div>
+    </div> -->
+</form>

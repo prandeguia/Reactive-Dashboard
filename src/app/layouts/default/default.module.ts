@@ -27,6 +27,9 @@ import {MatTableModule} from '@angular/material/table'
 import {MatPaginatorModule} from '@angular/material/paginator'
 import {MatSortModule} from '@angular/material/sort'
 import {MatDialogModule} from '@angular/material/dialog'
+import { UploadImageComponent } from 'src/app/modules/upload-image/upload-image.component';
+import { PushNotificationComponent } from 'src/app/modules/push-notification/push-notification.component';
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import {MatDialogModule} from '@angular/material/dialog'
     DefaultComponent,
     NavMenuComponent,
     DashboardComponent,
-    PostComponent
+    PostComponent,
+    UploadImageComponent,
+    PushNotificationComponent,
   ],
   imports: [
     CommonModule,
@@ -62,6 +67,7 @@ import {MatDialogModule} from '@angular/material/dialog'
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
+    HttpClientModule
   ]
 })
 export class DefaultModule { }
