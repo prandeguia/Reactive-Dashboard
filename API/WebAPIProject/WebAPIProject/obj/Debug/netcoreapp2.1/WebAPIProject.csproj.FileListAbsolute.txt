@@ -1,0 +1,14 @@
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\bin\Debug\netcoreapp2.1\WebAPIProject.deps.json
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\bin\Debug\netcoreapp2.1\WebAPIProject.runtimeconfig.json
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\bin\Debug\netcoreapp2.1\WebAPIProject.runtimeconfig.dev.json
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\bin\Debug\netcoreapp2.1\WebAPIProject.dll
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.RazorAssemblyInfo.cache
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.RazorAssemblyInfo.cs
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.AssemblyInfo.cs
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.RazorTargetAssemblyInfo.cache
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\bin\Debug\netcoreapp2.1\WebAPIProject.pdb
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.dll
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.pdb
+C:\Users\admin\Desktop\Angular\WebAPIProject\WebAPIProject\obj\Debug\netcoreapp2.1\WebAPIProject.csprojAssemblyReference.cache
