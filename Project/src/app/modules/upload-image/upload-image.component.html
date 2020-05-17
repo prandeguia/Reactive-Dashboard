@@ -1,15 +1,19 @@
-<form #imageForm = ngForm (ngSubmit)="onSubmit(Caption,Image)">
-    <label for="Caption">Caption</label>
-    <input type="text" #Caption ngModel name="Caption" id="Caption" required>
-    <img [src]="imageUrl" style="width:250px;height:250px" (click)="fileUploader.click()">
+<form #imageForm=ngForm (ngSubmit)="onSubmit(Caption,Image)">
+    <div fxFlex>
+        <label for="Caption">Caption</label>
+        <input type="text" #Caption ngModel name="Caption" id="Caption" required>
+        <img [src]="imageUrl" style="width:250px;height:250px" (click)="fileUploader.click()">
 
-    <input type="file" #Image accept="image/*" #fileUploader (change)="handleFIleInput($event.target.files)">
-  
-    <button type="submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+        <input type="file" #Image accept="image/*" #fileUploader (change)="handleFIleInput($event.target.files)">
 
-    <div *ngIf="imageList">
-        <div *ngFor="let i of imageList">
-            <img [src]="i.img" >
+        <button type="submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+    </div>
+    <div fxFlex>
+        <div *ngIf="imageList">
+            <div *ngFor="let i of imageList">
+                <img [src]="i.img">
+            </div>
         </div>
     </div>
+    <div fxFlex></div>
 </form>

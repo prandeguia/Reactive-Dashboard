@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +21,12 @@ export class UploadImageService {
   getImageList(){
    return this.http.get('http://localhost:51460/api/Image');
   }
+
+  opts = [];
+
+getData() {
+  return this.opts.length ?
+    of(this.opts) :
+    this.http.get<any>('http://localhost:51460/api/Image').pipe(tap(data => this.opts = data))
+}
 }
