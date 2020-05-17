@@ -1,8 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';;
+import { Component, OnInit, Input } from '@angular/core';;
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
-import { MatAutocomplete } from "@angular/material/autocomplete";
+import {map, startWith, debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
+import { UploadImageService } from 'src/app/service/upload-image.service';
 
 export interface User {
   name: string;
@@ -14,33 +14,37 @@ export interface User {
   styles: []
 })
 export class AutocompleteComponent implements OnInit {
+  
   myControl = new FormControl();
-  options: User[] = [
-    {name: 'Mary'},
-    {name: 'Shelley'},
-    {name: 'Igor'}
-  ];
+  options;
   filteredOptions: Observable<User[]>;
-  @ViewChild(MatAutocomplete) matAutocomplete: MatAutocomplete;
+
+  constructor(private service: UploadImageService) { 
+    this.filteredOptions = this.myControl.valueChanges
+          .pipe(
+            startWith(''),
+            debounceTime(400),
+            distinctUntilChanged(),
+            switchMap(val => {
+              return this.filter(val || '')
+            })       
+          );
+    }
 
   ngOnInit() {
-    this.filteredOptions = this.myControl.valueChanges
-      .pipe(
-        startWith(''),
-        map(value => typeof value === 'string' ? value : value.name),
-        map(name => name ? this._filter(name) : this.options.slice())
-      );
+    
   }
 
-  displayFn(user: User): string {
-    return user && user.name ? user.name : '';
-  }
-
-  private _filter(name: string): User[] {
-    const filterValue = name.toLowerCase();
-
-    return this.options.filter(option => option.name.toLowerCase().indexOf(filterValue) === 0);
-  }
+  // filter and return the values
+ filter(val: string): Observable<any[]> {
+    // call the service which makes the http-request
+    return this.service.getData()
+     .pipe(
+       map(response => response.filter(option => { 
+         return option.img.toLowerCase().indexOf(val.toLowerCase()) >= 0
+       }))
+     )
+   }  
 
 
 }

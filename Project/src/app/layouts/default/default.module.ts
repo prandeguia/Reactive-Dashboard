@@ -27,9 +27,12 @@ import {MatTableModule} from '@angular/material/table'
 import {MatPaginatorModule} from '@angular/material/paginator'
 import {MatSortModule} from '@angular/material/sort'
 import {MatDialogModule} from '@angular/material/dialog'
+import {MatAutocompleteModule} from '@angular/material/autocomplete'
+import { HttpClientModule } from "@angular/common/http";
+
 import { UploadImageComponent } from 'src/app/modules/upload-image/upload-image.component';
 import { PushNotificationComponent } from 'src/app/modules/push-notification/push-notification.component';
-import { HttpClientModule } from "@angular/common/http";
+import { AutocompleteComponent } from 'src/app/modules/autocomplete/autocomplete.component';
 
 
 @NgModule({
@@ -40,6 +43,7 @@ import { HttpClientModule } from "@angular/common/http";
     PostComponent,
     UploadImageComponent,
     PushNotificationComponent,
+    AutocompleteComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +55,7 @@ import { HttpClientModule } from "@angular/common/http";
     MatIconModule,
     MatListModule,
     FlexLayoutModule,
+    MatAutocompleteModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,

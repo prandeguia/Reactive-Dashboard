@@ -36,7 +36,7 @@ namespace WebAPIProject.Controllers
                   .ToList()
                   .Select(f => new
                   {
-
+                      f.ImageID,
                       img = myHostUrl + f.ImageName
                   });
             return results;

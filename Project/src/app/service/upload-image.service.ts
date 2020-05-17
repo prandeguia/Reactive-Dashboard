@@ -25,8 +25,6 @@ export class UploadImageService {
   opts = [];
 
 getData() {
-  return this.opts.length ?
-    of(this.opts) :
-    this.http.get<any>('http://localhost:51460/api/Image').pipe(tap(data => this.opts = data))
+  return this.opts.length ? of(this.opts) : this.http.get<any>('http://localhost:51460/api/Image').pipe(tap(data => this.opts = data))
 }
 }

@@ -1,19 +1,27 @@
 <form #imageForm=ngForm (ngSubmit)="onSubmit(Caption,Image)">
-    <div fxFlex>
-        <label for="Caption">Caption</label>
-        <input type="text" #Caption ngModel name="Caption" id="Caption" required>
-        <img [src]="imageUrl" style="width:250px;height:250px" (click)="fileUploader.click()">
+    <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+        <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-lg="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" fxLayoutGap="32px">
+            <div fxLayout="column">
+                <label for="Caption">Caption</label>
+                <input type="text" #Caption ngModel name="Caption" id="Caption" required>
+                <img [src]="imageUrl" style="width:250px;height:250px" (click)="fileUploader.click()">
 
-        <input type="file" #Image accept="image/*" #fileUploader (change)="handleFIleInput($event.target.files)">
+                <input type="file" #Image accept="image/*" #fileUploader
+                    (change)="handleFIleInput($event.target.files)">
 
-        <button type="submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
-    </div>
-    <div fxFlex>
-        <div *ngIf="imageList">
-            <div *ngFor="let i of imageList">
-                <img [src]="i.img">
+                <button type="submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
             </div>
+        </app-card>
         </div>
-    </div>
-    <div fxFlex></div>
+            <br>
+            <div fxLayout="column" fxLayoutGap="32px">
+                <div *ngIf="imageList">
+                    <span *ngFor="let i of imageList" >
+                        <img fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px" fxLayoutAlign="flex-start" [src]="i.img">
+                    </span>
+                </div>
+            </div>
+            
+        
+    
 </form>

@@ -21,7 +21,6 @@ export class UploadImageComponent implements OnInit {
   ngOnInit(): void {
     this.imageService.getImageList().subscribe(data  => {
       this.imageList = data;
-      console.log(this.imageList);
     })
 
   }
