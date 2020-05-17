@@ -12,19 +12,20 @@ export class UploadImageComponent implements OnInit {
   imageUrl: string = "/assets/img/default-image.png";
   fileToUpload: File = null;
   isSubmitted: boolean = false;
-  thumbnail: any;
+  imageList: any;
   constructor(private imageService: UploadImageService,
     private sanitizer: DomSanitizer) { }
 
 
 
   ngOnInit(): void {
-    this.imageService.getImageList().subscribe(baseImage  => {
-      this.thumbnail = baseImage['img'].toString().replace("\\","/");
-      console.log(this.thumbnail);
+    this.imageService.getImageList().subscribe(data  => {
+      this.imageList = data;
+      console.log(this.imageList);
     })
 
   }
+  
 
   handleFIleInput(file: FileList) {
     this.fileToUpload = file.item(0);
